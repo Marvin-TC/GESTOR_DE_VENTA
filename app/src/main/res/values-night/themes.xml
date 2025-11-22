@@ -1,0 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.PDVAbarroteria" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Primary (oscuro) -->
+        <item name="colorPrimary">#C4B8FF</item>
+        <item name="colorOnPrimary">#2A2070</item>
+        <item name="colorPrimaryContainer">#43358E</item>
+        <item name="colorOnPrimaryContainer">#E4DFFC</item>
+
+        <!-- Secondary -->
+        <item name="colorSecondary">#CAC3DD</item>
+        <item name="colorOnSecondary">#322E45</item>
+        <item name="colorSecondaryContainer">#49445C</item>
+        <item name="colorOnSecondaryContainer">#E5DEF1</item>
+
+        <!-- Tertiary -->
+        <item name="colorTertiary">#F3B8C8</item>
+        <item name="colorOnTertiary">#4A1C30</item>
+        <item name="colorTertiaryContainer">#643549</item>
+        <item name="colorOnTertiaryContainer">#FFD9E6</item>
+
+        <!-- Surface / Background -->
+        <item name="colorSurface">#141218</item>
+        <item name="colorOnSurface">#E6E0E9</item>
+        <item name="android:colorBackground">#141218</item>
+        <item name="colorOnBackground">#E6E0E9</item>
+
+        <!-- Outline -->
+        <item name="colorOutline">#948F99</item>
+
+        <!-- Errors -->
+        <item name="colorError">#F2B8B5</item>
+        <item name="colorOnError">#601410</item>
+        <item name="colorErrorContainer">#8C1D18</item>
+        <item name="colorOnErrorContainer">#F9DEDC</item>
+
+    </style>
+
+    <style name="Theme.PDVAbarroteria" parent="Base.Theme.PDVAbarroteria" />
+
+</resources>

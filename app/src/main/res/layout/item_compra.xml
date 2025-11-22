@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- NUEVO CONTENEDOR GENERAL -->
+    <RelativeLayout
+        android:id="@+id/contenedorItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- ENCABEZADO: ID + opciones -->
+        <RelativeLayout
+            android:id="@+id/layoutTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ID -->
+            <TextView
+                android:id="@+id/txt_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="?attr/colorSecondary"
+                android:textSize="14sp"
+                tools:text="#1023" />
+
+            <!-- OPCIONES (mejorado) -->
+            <ImageButton
+                android:id="@+id/butonOpciones"
+                android:layout_alignParentRight="true"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/outline_more_vert_24"/>
+
+            <!-- FECHA (ubicación actual) -->
+            <LinearLayout
+                android:id="@+id/layoutFecha"
+                android:layout_below="@id/txt_id"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/outline_calendar_today_24"/>
+
+                <TextView
+                    android:id="@+id/txt_fecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:textSize="12.5sp"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    tools:text="12/02/2025" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- PROVEEDOR -->
+        <LinearLayout
+            android:id="@+id/layoutProveedor"
+            android:layout_below="@id/layoutTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/outline_store_24"/>
+
+            <TextView
+                android:id="@+id/txt_proveedor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="Distribuidora El Gallo" />
+        </LinearLayout>
+
+        <!-- FACTURA -->
+        <LinearLayout
+            android:id="@+id/layoutFactura"
+            android:layout_below="@id/layoutProveedor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/outline_receipt_long_24"/>
+
+            <TextView
+                android:id="@+id/txt_factura"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textSize="13sp"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="Factura A-12345 | Serie F1" />
+        </LinearLayout>
+
+        <!-- TOTAL RESALTADO -->
+        <LinearLayout
+            android:id="@+id/layoutTotal"
+            android:layout_below="@id/layoutFactura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|end"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/txt_descuento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="10dp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                tools:text="(Desc: Q 10.00)" />
+
+            <LinearLayout
+                android:gravity="end"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Total Compra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/txt_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="6dp"
+                    android:textColor="?attr/colorPrimary"
+                    tools:text="Q 554.00" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

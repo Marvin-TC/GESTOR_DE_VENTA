@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProductosGestionFragment">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/txt_titulo_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        tools:text="CREAR PRODUCTO" />
+    <ImageView
+        android:padding="15dp"
+        android:id="@+id/buttonRefrescarProducto"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_refresh_24"/>
+
+    <!-- Botones -->
+    <RelativeLayout
+        android:id="@+id/layout_botones_producto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonCancelarProducto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:backgroundTint="@color/gray"
+                android:text="Cancelar" />
+
+            <Button
+                android:id="@+id/buttonGuardarProducto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guardar" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- FORMULARIO -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txt_titulo_producto"
+        android:layout_above="@id/layout_botones_producto">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- Estado -->
+            <LinearLayout
+                android:gravity="right"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/etiqueta_estado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PRODUCTO ACTIVO" />
+
+                <Switch
+                    android:enabled="false"
+                    android:id="@+id/switch_estadoProducto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+            </LinearLayout>
+            <!-- Nombre -->
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NOMBRE DEL PRODUCTO" />
+
+                <EditText
+                    android:id="@+id/txt_nombreProducto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:hint="Ejemplo: Azúcar blanca" />
+            </LinearLayout>
+
+            <!-- Nombre facturación -->
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NOMBRE FACTURACIÓN" />
+
+                <EditText
+                    android:id="@+id/txt_nombreFacturacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:hint="Ejemplo: Azúcar" />
+            </LinearLayout>
+
+            <!-- Código interno -->
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CÓDIGO INTERNO" />
+
+                <EditText
+                    android:id="@+id/txt_codigoInterno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Código interno" />
+            </LinearLayout>
+
+            <!-- Código de barras -->
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CÓDIGO DE BARRA" />
+
+                <EditText
+                    android:id="@+id/txt_codigoBarra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Opcional" />
+            </LinearLayout>
+
+            <!-- URL imagen -->
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="URL DE IMAGEN (opcional)" />
+
+                <EditText
+                    android:id="@+id/txt_urlImagen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="https://..." />
+            </LinearLayout>
+
+            <!-- Precio unidad -->
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PRECIO POR UNIDAD" />
+
+                <EditText
+                    android:id="@+id/txt_precioUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="Ejemplo: 4.50" />
+            </LinearLayout>
+
+            <!-- Precio mayorista -->
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PRECIO MAYORISTA" />
+
+                <EditText
+                    android:id="@+id/txt_precioMayorista"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="Ejemplo: 4.00" />
+            </LinearLayout>
+
+            <!-- Stock -->
+            <LinearLayout
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/etiqueta_stock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="STOCK" />
+
+                <EditText
+                    android:id="@+id/txt_stock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Ejemplo: 120" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

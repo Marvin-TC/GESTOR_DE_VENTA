@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/layoutTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txt_empresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/butonOpciones"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            tools:text="Distribuidora El Gallo" />
+
+        <ImageButton
+            android:id="@+id/butonOpciones"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/outline_more_vert_24"
+            android:backgroundTint="@color/white" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutDireccion"
+        android:layout_below="@id/layoutTitulo"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/outline_location_on_24" />
+        <TextView
+            android:id="@+id/txt_direccion"
+            android:textSize="12sp"
+            tools:text="Zona 1, Cobán"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_vendedor"
+        android:layout_below="@id/layoutDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Vendedor: Marvin Tiu" />
+    <LinearLayout
+        android:id="@+id/layoutTelefonos"
+        android:layout_below="@id/txt_vendedor"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/outline_phone_24" />
+        <TextView
+            android:id="@+id/txt_telefonos"
+            android:textSize="12sp"
+            tools:text="Empresa: 5555-5555  / Vendedor: 4444-4444"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Básicos -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray">#A9A8A8</color>
+    <color name="green">#2E7D32</color> <!-- verde material -->
+    <color name="red">#D32F2F</color>
+
+    <!-- PALETA PRINCIPAL – ARMÓNICA & MODERNA -->
+
+    <!-- PRIMARIO (tus acentos principales) -->
+    <color name="colorPrimary">#5B4BB7</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorPrimaryContainer">#E4DFFC</color>
+    <color name="colorOnPrimaryContainer">#1B1160</color>
+
+    <!-- SECUNDARIO (más suave, para info o elementos secundarios) -->
+    <color name="colorSecondary">#4E4A66</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorSecondaryContainer">#E5DEF1</color>
+    <color name="colorOnSecondaryContainer">#181428</color>
+
+    <!-- TERCIARIO (toques decorativos, confirmaciones sutiles, badges) -->
+    <color name="colorTertiary">#B25F81</color>
+    <color name="colorOnTertiary">#FFFFFF</color>
+    <color name="colorTertiaryContainer">#FFD9E6</color>
+    <color name="colorOnTertiaryContainer">#3E1023</color>
+
+    <!-- SUPERFICIE / FONDOS -->
+    <color name="colorSurface">#FEF7FF</color>
+    <color name="colorOnSurface">#1C1B1F</color>
+    <color name="colorBackground">#FEF7FF</color>
+    <color name="colorOnBackground">#1C1B1F</color>
+
+    <!-- OUTLINE -->
+    <color name="colorOutline">#79747E</color>
+
+    <!-- ERRORES -->
+    <color name="colorError">#BA1A1A</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorErrorContainer">#FFDAD6</color>
+    <color name="colorOnErrorContainer">#410002</color>
+
+</resources>
