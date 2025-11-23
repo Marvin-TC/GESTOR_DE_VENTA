@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start"
+    android:padding="1dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="14dp"
+        card_view:cardElevation="2dp"
+        android:backgroundTint="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <!-- PREVIEW DEL MENSAJE RESPONDIDO (ENTRANTE) -->
+            <LinearLayout
+                android:id="@+id/layoutReplyPreview"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:background="@drawable/bg_reply_incoming"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:id="@+id/txtReplyPreviewUser"
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="10sp"
+                    android:textColor="#1E88E5"
+                    android:text="Usuario" />
+
+                <TextView
+                    android:id="@+id/txtReplyPreviewText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textColor="#555555"
+                    android:textSize="10sp"
+                    android:text="Mensaje original..." />
+            </LinearLayout>
+            <!-- Nombre -->
+            <TextView
+                android:id="@+id/txtUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#0D47A1"
+                android:textSize="11sp"
+                android:text="Usuario" />
+
+            <!-- Mensaje -->
+            <TextView
+                android:id="@+id/txtMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#212121"
+                android:textSize="13sp"
+
+                android:text="Mensaje de prueba" />
+
+            <!-- Hora -->
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:45 PM"
+                android:textSize="8sp"
+                android:textColor="#666666"
+                android:layout_gravity="end" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
