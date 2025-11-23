@@ -1,6 +1,8 @@
 package com.kobux.pdvabarroteria;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -64,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
             txtPassword.setError("Ingresa tu contraseña");
             return;
         }
-
+        bloquearBoton(btnLogin);
         retrofit.getApi().login(user, pass)
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
@@ -101,14 +104,15 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this,
                                         "Error desconocido del servidor", Toast.LENGTH_SHORT).show();
                             }
+                            activarBoton(btnLogin);
                         }
                     }
                     @Override
                     public void onFailure(Call<ResponseBody> call, Throwable t) {
                         Log.e("LOGIN", "Error de conexión: " + t.getMessage(), t);
-
                         Toast.makeText(LoginActivity.this,
                                 "Error de conexión: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                        activarBoton(btnLogin);
                     }
                 });
     }
@@ -117,5 +121,15 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(i);
         finish();
+    }
+
+    private void bloquearBoton(Button btn) {
+        btn.setEnabled(false);
+        btn.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#BDBDBD")));
+    }
+
+    private void activarBoton(Button btn) {
+        btn.setEnabled(true);
+        btn.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(btn.getContext(), R.color.colorPrimary)));
     }
 }
