@@ -118,5 +118,10 @@ public interface ApiService {
             @Query("limite") int limite       // opcional
     );
 
-
+    //LOGIN
+  @POST("usuarios/login")
+  Call<ResponseBody> login(
+          @Query("userName") String userName,
+          @Query("password") String password
+  );
 }

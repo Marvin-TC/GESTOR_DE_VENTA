@@ -12,16 +12,16 @@
         android:background="?attr/colorPrimary"
         app:titleTextColor="?attr/colorOnPrimary"
         app:elevation="4dp"
-        app:title="PDV Abarrotería"
+        app:title="Tienda"
         app:titleCentered="true" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:background="?attr/colorSurface"
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/menu_bottom_nav" />
+        app:menu="@menu/menu_bottom_nav"
+        android:background="?attr/colorSurface" />
 
     <FrameLayout
         android:id="@+id/contenedor_fragmentos"
@@ -29,5 +29,4 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:layout_above="@id/bottom_navigation" />
-
 </RelativeLayout>
