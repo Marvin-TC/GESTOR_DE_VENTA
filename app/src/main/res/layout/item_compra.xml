@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textColor="?attr/colorSecondary"
+                android:textColor="@color/colorSecondary"
                 android:textSize="14sp"
                 tools:text="#1023" />
 
@@ -35,7 +35,7 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:padding="4dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/outline_more_vert_24"/>
 
             <!-- FECHA (ubicación actual) -->
@@ -59,7 +59,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:textSize="12.5sp"
-                    android:textColor="?attr/colorOnSurfaceVariant"
                     tools:text="12/02/2025" />
             </LinearLayout>
         </RelativeLayout>
@@ -86,7 +85,7 @@
                 android:layout_marginStart="6dp"
                 android:textSize="13sp"
                 android:textStyle="bold"
-                android:textColor="?attr/colorOnSurface"
+                android:textColor="@color/colorOnSurface"
                 tools:text="Distribuidora El Gallo" />
         </LinearLayout>
 
@@ -111,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:textSize="13sp"
-                android:textColor="?attr/colorOnSurface"
+                android:textColor="@color/colorOnSurface"
                 tools:text="Factura A-12345 | Serie F1" />
         </LinearLayout>
 
@@ -131,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
                 android:layout_marginStart="10dp"
-                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textColor="@color/colorOnSurface"
                 tools:text="(Desc: Q 10.00)" />
 
             <LinearLayout
@@ -152,7 +151,7 @@
                     android:textSize="25dp"
                     android:textStyle="bold"
                     android:layout_marginStart="6dp"
-                    android:textColor="?attr/colorPrimary"
+                    android:textColor="@color/colorPrimary"
                     tools:text="Q 554.00" />
 
             </LinearLayout>

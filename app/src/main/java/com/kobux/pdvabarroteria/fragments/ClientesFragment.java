@@ -42,10 +42,11 @@ public class ClientesFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
     private ClienteAdapter adapter;
     private List<ClienteModel> lista = new ArrayList<>();
-    RetrofitClient retrofit;
-    Context context;
+    private RetrofitClient retrofit;
+    private Context context;
     private ActivityResultLauncher<Intent> editarClienteLauncher;
     private FloatingActionButton buttonNuevo;
+    private boolean isFabVisible = true;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -101,6 +102,24 @@ public class ClientesFragment extends Fragment {
         });
 
         cargarClientes();
+
+
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                if (dy > 10 && isFabVisible) {
+                    buttonNuevo.hide();
+                    isFabVisible = false;
+                } else if (dy < -10 && !isFabVisible) {
+                    buttonNuevo.show();
+                    isFabVisible = true;
+                }
+            }
+        });
+
         return vista;
     }
 

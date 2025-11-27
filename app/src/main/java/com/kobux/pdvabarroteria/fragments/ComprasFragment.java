@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.kobux.pdvabarroteria.R;
 import com.kobux.pdvabarroteria.adapters.ComprasAdapter;
 import com.kobux.pdvabarroteria.models.ClienteModel;
@@ -35,8 +36,10 @@ public class ComprasFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
     private ComprasAdapter adapter;
     private List<CompraListModel> lista = new ArrayList<>();
-    RetrofitClient retrofit;
-    Context context;
+    private RetrofitClient retrofit;
+    private Context context;
+    private boolean isFabVisible = true;
+    private FloatingActionButton buttonNuevo;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -45,6 +48,7 @@ public class ComprasFragment extends Fragment {
 
         recyclerView = vista.findViewById(R.id.recyclerCompras);
         swipeRefreshLayout = vista.findViewById(R.id.swipeRefresh);
+        buttonNuevo = vista.findViewById(R.id.fabAgregarCompras);
         retrofit = RetrofitClient.getInstance();
         context = getActivity().getApplicationContext();
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -58,6 +62,21 @@ public class ComprasFragment extends Fragment {
         });
 
         cargarCompras();
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                if (dy > 10 && isFabVisible) {
+                    buttonNuevo.hide();
+                    isFabVisible = false;
+                } else if (dy < -10 && !isFabVisible) {
+                    buttonNuevo.show();
+                    isFabVisible = true;
+                }
+            }
+        });
         return vista;
     }
 

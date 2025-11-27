@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -42,10 +43,11 @@ public class ProveedoresFragment extends Fragment {
     private SwipeRefreshLayout swipeRefreshLayout;
     private ProveedorAdapter adapter;
     private List<ProveedorModel> lista = new ArrayList<>();
-    RetrofitClient retrofit;
-    Context context;
+    private RetrofitClient retrofit;
+    private Context context;
     private ActivityResultLauncher<Intent> editarProveedorLauncher;
     private FloatingActionButton buttonNuevo;
+    private boolean isFabVisible = true;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -96,6 +98,21 @@ public class ProveedoresFragment extends Fragment {
             editarProveedorLauncher.launch(intent);});
 
         cargarProveedores();
+
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                if (dy > 10 && isFabVisible) {
+                    buttonNuevo.hide();
+                    isFabVisible = false;
+                } else if (dy < -10 && !isFabVisible) {
+                    buttonNuevo.show();
+                    isFabVisible = true;
+                }
+            }
+        });
         return vista;
     }
 
